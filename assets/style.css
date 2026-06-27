@@ -1644,3 +1644,261 @@ footer {
         grid-template-columns: 1fr 1fr
     }
 }
+
+/* ===========================
+   LANGUAGE SWITCHER STYLES
+   =========================== */
+
+/* Language toggle button */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-switch::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--teal) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lang-switch:hover {
+    border-color: var(--forest);
+    color: var(--ink);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 110, 91, 0.15);
+}
+
+.lang-switch:hover::before {
+    opacity: 0.06;
+}
+
+.lang-switch:active {
+    transform: translateY(0);
+}
+
+.lang-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: var(--sans);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.lang-label {
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+}
+
+/* Topbar lang indicator */
+[data-lang-indicator] {
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+[data-lang-indicator]:hover {
+    color: var(--forest);
+}
+
+/* Nav language switch placement */
+.nav-side .lang-switch {
+    margin-left: 8px;
+}
+
+[dir="ltr"] .nav-side .lang-switch {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+/* ===========================
+   i18n TRANSITION ANIMATION
+   =========================== */
+
+.i18n-transitioning [data-i18n],
+.i18n-transitioning [data-i18n-html] {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+[data-i18n],
+[data-i18n-html] {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* ===========================
+   LTR (English) OVERRIDES
+   =========================== */
+
+/* Base font changes for English */
+.lang-en {
+    font-family: 'Inter', 'Outfit', -apple-system, system-ui, sans-serif;
+}
+
+[dir="ltr"] .display,
+[dir="ltr"] h1,
+[dir="ltr"] h2,
+[dir="ltr"] h3 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+}
+
+[dir="ltr"] .brand-name {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+}
+
+/* Side rails */
+[dir="ltr"] .side-rail.right {
+    right: auto;
+    left: 0;
+}
+
+[dir="ltr"] .side-rail.left {
+    left: auto;
+    right: 0;
+}
+
+/* Topbar */
+[dir="ltr"] .topbar-inner {
+    direction: ltr;
+    text-align: left;
+}
+
+[dir="ltr"] .topbar-inner .right {
+    text-align: right;
+}
+
+/* Nav */
+[dir="ltr"] .nav-inner {
+    direction: ltr;
+}
+
+[dir="ltr"] .brand-meta {
+    text-align: left;
+}
+
+/* Hero */
+[dir="ltr"] .hero-copy {
+    text-align: left;
+}
+
+[dir="ltr"] .hero-actions {
+    justify-content: flex-start;
+}
+
+/* Section rules */
+[dir="ltr"] .sec-rule {
+    direction: ltr;
+}
+
+/* Section header */
+[dir="ltr"] .section-header {
+    text-align: left;
+}
+
+/* Feature cards */
+[dir="ltr"] .feat-card {
+    text-align: left;
+}
+
+[dir="ltr"] .feat-card .num {
+    direction: ltr;
+}
+
+/* Requirements */
+[dir="ltr"] .req-card {
+    text-align: left;
+}
+
+[dir="ltr"] .req-list li {
+    direction: ltr;
+}
+
+/* CTA */
+[dir="ltr"] .cta-copy {
+    text-align: left;
+}
+
+/* Footer */
+[dir="ltr"] .foot-brand {
+    text-align: left;
+}
+
+[dir="ltr"] .foot-col {
+    text-align: left;
+}
+
+[dir="ltr"] .foot-bottom {
+    direction: ltr;
+}
+
+/* Walkthrough */
+[dir="ltr"] .tab-pill {
+    text-align: left;
+}
+
+[dir="ltr"] .walkthrough-layout > div:first-child {
+    text-align: left;
+}
+
+/* Wire / Marquee */
+[dir="ltr"] .wire-title {
+    text-align: left;
+}
+
+/* Phone frame annotation */
+[dir="ltr"] .art-annot {
+    direction: ltr;
+}
+
+/* Arrow marks flip for LTR */
+[dir="ltr"] .arrow-mark svg {
+    transform: scaleX(-1);
+}
+
+/* Footer mega text */
+[dir="ltr"] .foot-mega .word {
+    direction: ltr;
+}
+
+/* Responsive adjustments for lang switch */
+@media (max-width: 768px) {
+    .lang-switch .lang-label {
+        display: none;
+    }
+    
+    .lang-switch {
+        padding: 5px 8px;
+        gap: 0;
+    }
+}
