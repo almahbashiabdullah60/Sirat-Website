@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "صراط (Sirat) — Landing Page",
+  "entry": "sirat-landing-page.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "primary": true,
+  "createdAt": "2026-06-26T22:09:30.865Z",
+  "updatedAt": "2026-06-26T22:09:30.873Z",
+  "metadata": {
+    "identifier": "sirat-landing-page",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}
