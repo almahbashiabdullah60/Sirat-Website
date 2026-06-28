@@ -52,3 +52,34 @@
 })();
 
 document.getElementById('year').textContent=new Date().getFullYear();
+
+(function(){
+  var repo='almahbashiabdullah60/Sirat';
+  var countEl=document.getElementById('downloadCount');
+  var ctaEl=document.getElementById('ctaDownloadCount');
+  if(!countEl||!ctaEl)return;
+  var cached=localStorage.getItem('sirat-dl-count');
+  var cachedTime=localStorage.getItem('sirat-dl-time');
+  if(cached&&cachedTime&&(Date.now()-Number(cachedTime))<3600000){
+    countEl.textContent=cached;ctaEl.textContent=cached;return;
+  }
+  fetch('https://api.github.com/repos/'+repo+'/releases?per_page=5')
+    .then(function(r){return r.json()})
+    .then(function(data){
+      if(!data||!Array.isArray(data))return;
+      var total=0;
+      for(var i=0;i<data.length;i++){
+        var assets=data[i].assets;
+        if(assets&&Array.isArray(assets)){
+          for(var j=0;j<assets.length;j++){
+            total+=assets[j].download_count||0;
+          }
+        }
+      }
+      var display=total>=1000?(total/1000).toFixed(1).replace(/\.0$/,'')+'K':String(total);
+      countEl.textContent=display;
+      ctaEl.textContent=display;
+      try{localStorage.setItem('sirat-dl-count',display);localStorage.setItem('sirat-dl-time',String(Date.now()))}catch(e){}
+    })
+    .catch(function(){});
+})();

@@ -43,6 +43,8 @@
     "stat3Value": "60M",
     "stat3Label": "Light",
     "stat3Sub": "Weight",
+    "stat4Label": "Downloads",
+    "stat4Sub": "Total",
     "footNote": "↳   Android 10+  ·  100% Privacy",
     "artAnnotTop": "FIG. 01 / SIRAT-2026",
     "artAnnotBottom": "Main Screen",
@@ -167,7 +169,9 @@
     "stat2Sub": "MIT · No Ads",
     "stat3Value": "10+",
     "stat3Label": "Android 10+",
-    "stat3Sub": "Optimized for Android 14+"
+    "stat3Sub": "Optimized for Android 14+",
+    "stat4Label": "Total Downloads",
+    "stat4Sub": "Download"
   },
   "footer": {
     "brandDesc": "An open-source self-control app for Android — helps you block unwanted content, lock apps, and build healthy habits. Your privacy is fully preserved.",

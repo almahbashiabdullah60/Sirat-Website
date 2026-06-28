@@ -43,6 +43,8 @@
     "stat3Value": "60M",
     "stat3Label": "حجم",
     "stat3Sub": "خفيف",
+    "stat4Label": "تحميل",
+    "stat4Sub": "تنزيل",
     "footNote": "↳   Android 10+  ·  خصوصية 100%",
     "artAnnotTop": "FIG. 01 / SIRAT-2026",
     "artAnnotBottom": "الشاشة الرئيسية",
@@ -167,7 +169,9 @@
     "stat2Sub": "MIT · No Ads",
     "stat3Value": "10+",
     "stat3Label": "Android 10+",
-    "stat3Sub": "محسّن لـ Android 14+"
+    "stat3Sub": "محسّن لـ Android 14+",
+    "stat4Label": "إجمالي التحميل",
+    "stat4Sub": "تنزيل"
   },
   "footer": {
     "brandDesc": "تطبيق رقابة ذاتية مفتوح المصدر للأندرويد — يساعدك على حجب المحتوى غير المرغوب، قفل التطبيقات، وبناء عادات صحية. خصوصيتك محفوظة بالكامل.",
