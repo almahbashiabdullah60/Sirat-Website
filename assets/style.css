@@ -1901,10 +1901,363 @@ footer {
     text-align: left;
 }
 
-/* Phone frame annotation */
-[dir="ltr"] .art-annot {
-    direction: ltr;
+/* Comparison section */
+.cmp-apps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 28px
 }
+
+.cmp-app-chip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px
+}
+
+.cmp-app-chip .chip-emoji {
+    font-size: 18px
+}
+
+.cmp-app-chip b {
+    display: block;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--ink)
+}
+
+.cmp-app-chip span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    letter-spacing: .08em
+}
+
+.cmp-app-chip.sirat {
+    background: var(--ink);
+    border-color: var(--ink)
+}
+
+.cmp-app-chip.sirat b {
+    color: var(--paper)
+}
+
+.cmp-app-chip.sirat span {
+    color: var(--teal)
+}
+
+.cmp-table-wrap {
+    overflow-x: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow), inset 0 0 0 1px rgba(15, 26, 18, .06);
+    background: var(--paper);
+    margin-bottom: 64px;
+    -webkit-overflow-scrolling: touch
+}
+
+.cmp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--body);
+    font-size: 13.5px;
+    min-width: 640px
+}
+
+.cmp-table thead th {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--sans);
+    font-weight: 800;
+    text-align: right;
+    padding: 18px 20px;
+    font-size: 13px;
+    letter-spacing: -.005em;
+    position: sticky;
+    top: 0
+}
+
+.cmp-table thead th.col-sirat {
+    background: var(--forest-deep);
+    color: var(--teal)
+}
+
+.cmp-table tbody td {
+    padding: 14px 20px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--ink-soft);
+    line-height: 1.5;
+    vertical-align: top
+}
+
+.cmp-table tbody tr:nth-child(even) td {
+    background: rgba(234, 227, 200, .25)
+}
+
+.cmp-table tbody td b {
+    color: var(--ink)
+}
+
+.cmp-table tbody td.col-sirat {
+    background: rgba(33, 110, 91, .07);
+    color: var(--forest-deep);
+    font-weight: 600
+}
+
+.cmp-table tbody tr:nth-child(even) td.col-sirat {
+    background: rgba(33, 110, 91, .12)
+}
+
+.cmp-strengths {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 64px
+}
+
+.cmp-card {
+    padding: 32px 28px;
+    background: var(--paper);
+    border-radius: 20px;
+    box-shadow: var(--shadow), inset 0 0 0 1px rgba(15, 26, 18, .06)
+}
+
+.cmp-card.cmp-sirat {
+    background: var(--ink);
+    color: var(--paper)
+}
+
+.cmp-card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line-soft)
+}
+
+.cmp-sirat .cmp-card-head {
+    border-bottom-color: rgba(255, 255, 255, .12)
+}
+
+.cmp-badge {
+    align-self: flex-start;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(33, 110, 91, .12);
+    color: var(--forest)
+}
+
+.cmp-badge.paid {
+    background: rgba(252, 218, 123, .25);
+    color: #8a6a16
+}
+
+.cmp-sirat .cmp-badge {
+    background: rgba(146, 210, 199, .18);
+    color: var(--teal)
+}
+
+.cmp-card h3 {
+    font-family: var(--sans);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -.012em
+}
+
+.cmp-sirat h3 {
+    color: var(--paper)
+}
+
+.cmp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.cmp-list li {
+    position: relative;
+    padding-right: 22px;
+    font-family: var(--body);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-soft)
+}
+
+.cmp-list li::before {
+    content: '·';
+    position: absolute;
+    right: 6px;
+    top: -4px;
+    color: var(--forest);
+    font-size: 24px;
+    font-weight: 900
+}
+
+.cmp-sirat .cmp-list li {
+    color: rgba(251, 247, 227, .82)
+}
+
+.cmp-sirat .cmp-list li::before {
+    color: var(--teal)
+}
+
+.cmp-list li b {
+    color: var(--ink)
+}
+
+.cmp-sirat .cmp-list li b {
+    color: var(--paper)
+}
+
+.cmp-weak-wrap {
+    margin-bottom: 56px
+}
+
+.cmp-sub-title {
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -.014em;
+    margin-bottom: 22px
+}
+
+.cmp-weak-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+.cmp-weak-col {
+    padding: 24px 22px;
+    background: var(--paper);
+    border-radius: 16px;
+    box-shadow: var(--shadow), inset 0 0 0 1px rgba(15, 26, 18, .06)
+}
+
+.cmp-weak-col.sirat {
+    box-shadow: var(--shadow), inset 0 0 0 1.5px var(--forest)
+}
+
+.cmp-weak-head {
+    display: block;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--forest);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line-soft)
+}
+
+.cmp-weak-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px
+}
+
+.cmp-weak-col li {
+    position: relative;
+    padding-right: 20px;
+    font-family: var(--body);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5
+}
+
+.cmp-weak-col li::before {
+    content: '✕';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #c0563f;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.cmp-summary {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 28px;
+    padding: 56px 48px;
+    position: relative;
+    overflow: hidden
+}
+
+.cmp-summary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .4;
+    mix-blend-mode: screen;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n4'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.9  0 0 0 0 0.97  0 0 0 0 0.88  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n4)'/></svg>");
+    background-size: 240px 240px
+}
+
+.cmp-summary-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px
+}
+
+.cmp-sum-card {
+    padding: 26px 24px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 16px
+}
+
+.cmp-sum-card.sirat {
+    background: rgba(146, 210, 199, .12);
+    border-color: rgba(146, 210, 199, .35)
+}
+
+.cmp-sum-card b {
+    display: block;
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--teal);
+    margin-bottom: 10px
+}
+
+.cmp-sum-card:not(.sirat) b {
+    color: var(--paper)
+}
+
+.cmp-sum-card p {
+    font-family: var(--body);
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(251, 247, 227, .82)
+}
+
+@media (max-width: 900px) {
+    .cmp-strengths,
+    .cmp-weak-grid,
+    .cmp-summary-grid {
+        grid-template-columns: 1fr
+    }
+
+    .cmp-summary {
+        padding: 36px 24px
+    }
+}
+
+
 
 /* Arrow marks flip for LTR */
 [dir="ltr"] .arrow-mark svg {
